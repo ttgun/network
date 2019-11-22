@@ -12,7 +12,8 @@ RUN export DEPS=" \
 ENV SHADOWSOCKS_DIR=/shadowsocks
 RUN mkdir $SHADOWSOCKS_DIR
 WORKDIR $SHADOWSOCKS_DIR
-RUN git init \
+RUN export CFLAGS="-march=armv8-a+crc -mtune=cortex-a72 -O2" \
+  && git init \
   && git remote add origin $SHADOWSOCKS_REPO \
   && git fetch origin --depth 1 v$SHADOWSOCKS_VER \
   && git reset --hard FETCH_HEAD

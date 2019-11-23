@@ -3,7 +3,7 @@ ARG ALPINE_VER=3.10
 # Source
 ################################################################################
 FROM arm64v8/alpine:$ALPINE_VER AS source
-ENV SHADOWSOCKS_VER=3.3.1
+ENV SHADOWSOCKS_VER=3.3.3
 ENV SHADOWSOCKS_REPO=https://github.com/shadowsocks/shadowsocks-libev.git
 RUN export DEPS=" \
     autoconf automake pcre-dev asciidoc xmlto mbedtls-dev libsodium-dev c-ares-dev libev-dev \
